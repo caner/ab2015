@@ -6,6 +6,8 @@ public class Duyuru{
     private String duyuruBaslik;
     private String duyuruIcerik;
 
+    public Duyuru(){}
+
     public Duyuru(String duyuruBaslik, String duyuruIcerik) {
         this.duyuruBaslik = duyuruBaslik;
         this.duyuruIcerik = duyuruIcerik;
