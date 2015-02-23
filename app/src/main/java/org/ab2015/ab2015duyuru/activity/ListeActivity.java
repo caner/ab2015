@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.ListView;
 
 import org.ab2015.ab2015duyuru.R;
+import org.ab2015.ab2015duyuru.adapter.DuyuruAdapter;
 import org.ab2015.ab2015duyuru.model.Duyuru;
 
 import java.util.ArrayList;
@@ -30,6 +31,12 @@ public class ListeActivity extends ActionBarActivity {
 
         //duyuruListesi'ni 20 tane Duyuru nesnesiyle dolduralım
         duyuruListesiniDoldur();
+
+        //yazdığımız adapter'ı verileriyle oluşturalım
+        DuyuruAdapter adapter=new DuyuruAdapter(this,duyuruListesi);
+
+        //listView'a adapter'ını verelim
+        listView.setAdapter(adapter);
 
 
     }
