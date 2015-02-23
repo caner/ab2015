@@ -1,12 +1,15 @@
 package org.ab2015.ab2015duyuru.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import org.ab2015.ab2015duyuru.DuyuruOperation;
 import org.ab2015.ab2015duyuru.R;
 import org.ab2015.ab2015duyuru.adapter.DuyuruAdapter;
 import org.ab2015.ab2015duyuru.model.Duyuru;
@@ -29,24 +32,15 @@ public class ListeActivity extends ActionBarActivity {
         //boş bir liste oluşturuyoruz
         duyuruListesi=new ArrayList<Duyuru>();
 
-        //duyuruListesi'ni 20 tane Duyuru nesnesiyle dolduralım
-        duyuruListesiniDoldur();
-
-        //yazdığımız adapter'ı verileriyle oluşturalım
-        DuyuruAdapter adapter=new DuyuruAdapter(this,duyuruListesi);
-
-        //listView'a adapter'ını verelim
-        listView.setAdapter(adapter);
-
-
     }
 
-    private void duyuruListesiniDoldur() {
-        for(int i=0;i<20;i++){
-            Duyuru duyuru=new Duyuru("Duyuru başlık"+i,
-                    "Duyuru içerik"+i);
-            duyuruListesi.add(duyuru);
-        }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //Activity onResume olurken, duyuruları veri tabanından çekelim
+        DuyuruListesiGetirTask task=new DuyuruListesiGetirTask();
+        task.execute();
     }
 
     @Override
@@ -71,4 +65,39 @@ public class ListeActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public class DuyuruListesiGetirTask extends AsyncTask<Void, Void, ArrayList<Duyuru>> {
+
+        ProgressDialog dialog;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            //işleme başlamadan önce ProgressDialog gösterelim
+            dialog=new ProgressDialog(ListeActivity.this);
+            dialog.setTitle("İşlem yapılıyor...");
+            dialog.setMessage("Lütfen bekleyiniz");
+            dialog.show();
+
+        }
+
+        @Override
+        protected ArrayList<Duyuru> doInBackground(Void... params) {
+            DuyuruOperation duyuruOp=new DuyuruOperation(ListeActivity.this);
+            return duyuruOp.getDuyuruList();
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<Duyuru> duyurus) {
+            super.onPostExecute(duyurus);
+
+            DuyuruAdapter adapter=new DuyuruAdapter(ListeActivity.this,duyurus);
+            listView.setAdapter(adapter);
+
+            //işlem bittiğine göre ProgressDialog'u kapatalım
+            dialog.dismiss();
+        }
+    }
+
 }
