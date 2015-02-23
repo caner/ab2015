@@ -2,11 +2,18 @@
 <resources>
 
     <string name="app_name">Duyuru Panosu</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Ayarlar</string>
     <string name="string_kullaniciadi">Kullanıcı adınız</string>
     <string name="string_parola">Parolanız</string>
     <string name="string_girisyap">Giriş</string>
     <string name="string_kaydol">Kaydol</string>
+    <string name="title_activity_liste">ListeActivity</string>
+    <string name="action_string_yeniduyuruekle">Yeni duyuru ekle</string>
+    <string name="title_activity_duyuru_ekle">DuyuruEkleActivity</string>
+    <string name="string_duyurubasligi">Duyuru başlığı...</string>
+    <string name="string_duyuruicerik">Duyuru içeriği...</string>
+    <string name="kaydet">Kaydet</string>
+    <string name="title_activity_kaydol">KaydolActivity</string>
 
+    <string name="hello_world">Hello world!</string>
 </resources>

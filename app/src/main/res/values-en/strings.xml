@@ -2,6 +2,15 @@
 <resources>
 
     <string name="app_name">Bulletin</string>
+    <string name="action_settings">Settings</string>
     <string name="string_kullaniciadi">User name</string>
     <string name="string_parola">Password</string>
+    <string name="string_girisyap">Sign in</string>
+    <string name="string_kaydol">Sign up</string>
+    <string name="title_activity_liste">ListeActivity</string>
+    <string name="action_string_yeniduyuruekle">Add new announcement</string>
+    <string name="title_activity_duyuru_ekle">DuyuruEkleActivity</string>
+    <string name="string_duyurubasligi">Announcement title...</string>
+    <string name="string_duyuruicerik">Announcement content...</string>
+    <string name="kaydet">Save</string>
 </resources>

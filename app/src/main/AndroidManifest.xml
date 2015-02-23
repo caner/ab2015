@@ -8,13 +8,25 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".GirisActivity"
+            android:name=".activity.GirisActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ListeActivity"
+            android:label="@string/title_activity_liste" >
+        </activity>
+        <activity
+            android:name=".activity.DuyuruEkleActivity"
+            android:label="@string/title_activity_duyuru_ekle" >
+        </activity>
+        <activity
+            android:name=".activity.KaydolActivity"
+            android:label="@string/title_activity_kaydol" >
         </activity>
     </application>
 

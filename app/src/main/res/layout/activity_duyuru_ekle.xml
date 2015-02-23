@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical" android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDuyuruBaslik"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_horizontal"
+        android:hint="@string/string_duyurubasligi" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/txtDuyuruIcerik"
+        android:layout_gravity="center_horizontal"
+        android:hint="@string/string_duyuruicerik" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kaydet"
+        android:id="@+id/btnDuyuruKaydet"
+        android:layout_gravity="right" />
+</LinearLayout>

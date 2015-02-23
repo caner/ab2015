@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="org.ab2015.ab2015duyuru.activity.ListeActivity">
+    <item
+        android:id="@+id/action_yeniekle"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/action_string_yeniduyuruekle"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+</menu>
